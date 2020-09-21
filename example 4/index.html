@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      // 
+      // Notice how we register a callback function in response to
+      // the event 'DOMContentLoaded'. The second argument of the addEventListener method
+      // is an anonymous function. 
+      //
+
+      document.addEventListener('DOMContentLoaded', function() {
+            //  Notice that the 'inc' function  is assigned on the onclick event
+            // of the button HTML element. 
+            document.querySelector("button").onclick = inc;
+          }
+      )
+      
+      let counter = 0
+      function inc() {
+            // update the varable by one.
+            counter = counter + 1;
+            // notice querySelector using id of the commponent
+            // Notice the use of string literal syntax ${counter}. 
+            document.querySelector("#score").innerHTML = `Score: ${counter}`;
+
+            // Notice the syntax of an if statement in javascript .
+            if (counter >= 10) {
+                counter = 0
+                document.querySelector("#score").innerHTML = "You Win!"
+            }
+      }
+    </script>
+  </head>
+  <body>
+      <h1 id="score">Score: 0</h1>
+      <button> Click to score a point  !</button>
+  </body>
+</html>
